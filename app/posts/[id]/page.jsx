@@ -1,6 +1,7 @@
 
-export default function Page() {
+export default function Page({ params }) {
+   console.log(params);
    return (
-      <div>Page</div>
+      <div>{params.id}</div>
    )
 }

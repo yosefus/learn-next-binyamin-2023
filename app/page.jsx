@@ -1,3 +1,4 @@
+import PostCard from "@/components/ui/PostCard";
 import Link from "next/link";
 
 
@@ -21,7 +22,12 @@ export default async function Home() {
       </div>
 
       <ul>
-
+        {allPosts.map(post =>
+          <PostCard
+            key={post.id}
+            {...post}
+          />
+        )}
       </ul>
     </>
   )

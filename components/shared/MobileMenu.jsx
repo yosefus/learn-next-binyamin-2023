@@ -12,7 +12,9 @@ export default function MobileMenu() {
          <button onClick={() => setIsClose(prev => !prev)}>
             <FiMenu />
          </button>
-         <nav className={`
+         <nav
+            onClick={() => setIsClose(true)}
+            className={`
          ${isClose ? 'hidden' : 'absolute'} 
          left-0 right-0 top-12 backdrop-blur z-10 flex flex-col gap-4 p-4 shadow`}>
             <Link href='/'> בית </Link>
