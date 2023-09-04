@@ -6,7 +6,7 @@ import Foot from '@/components/shared/Foot'
 
 const assistant = Assistant({
   subsets: ['hebrew', 'latin'],
-  weight: ['200', '300', '500', '700', '400', '800']
+  weight: ['200', '300', '500', '700', '400', '800', '600']
 })
 
 export const metadata = {

@@ -1,9 +1,28 @@
+import Link from "next/link";
 
-export default async function Home({ searchParams }) {
+
+const getPosts = async () => {
+  const result = await fetch('https://jsonplaceholder.typicode.com/posts')
+  const posts = await result.json()
+  return posts
+}
+
+export default async function Home() {
+  const allPosts = await getPosts()
 
   return (
-    <div >
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.</p>
-    </div>
+    <>
+      <div className="text-center py-10 flex flex-col gap-4">
+        <h1 className="font-bold text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quibusdam deleniti expedita magni aperiam quisquam?</h1>
+        <p className="text-gray-700">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, reprehenderit rem dolorum ducimus atque consequatur fugit ex debitis tempore sapiente culpa, a, itaque possimus sed?</p>
+        <Link
+          className="bg-gray-800 self-center text-white py-2 px-6 rounded-lg"
+          href='/about'>אודות</Link>
+      </div>
+
+      <ul>
+
+      </ul>
+    </>
   )
 }
