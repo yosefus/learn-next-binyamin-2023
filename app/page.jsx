@@ -1,10 +1,12 @@
 import PostCard from "@/components/ui/PostCard";
 import SearchBar from "@/components/ui/SearchBar";
+import SearchSection from "@/components/ui/SearchSection";
 import Link from "next/link";
 
 
 const getPosts = async () => {
   const result = await fetch('https://jsonplaceholder.typicode.com/posts')
+  if (!result.ok) throw ''
   const posts = await result.json()
   return posts
 }
@@ -23,27 +25,18 @@ export default async function Home() {
           href='/about'>אודות</Link>
       </div>
 
-      <ul className="flex justify-center gap-6 flex-col md:flex-row flex-wrap">
+      {/* <ul className="flex justify-center gap-6 flex-col md:flex-row flex-wrap">
         {allPosts
-          .filter((p, i) => i < 10)
+          .filter((p, i) => i < 3)
           .map(post =>
             <PostCard
               key={post.id}
               {...post}
             />
           )}
-      </ul>
+      </ul> */}
 
-      {/* search */}
-      <SearchBar />
-      <ul className="flex justify-center gap-6 flex-col md:flex-row flex-wrap">
-        {allPosts.map(post =>
-          <PostCard
-            key={post.id}
-            {...post}
-          />
-        )}
-      </ul>
+      <SearchSection />
 
     </>
   )
