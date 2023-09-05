@@ -21,7 +21,7 @@ export default async function Home() {
           href='/about'>אודות</Link>
       </div>
 
-      <ul>
+      <ul className="flex justify-center gap-6 flex-col md:flex-row flex-wrap">
         {allPosts.map(post =>
           <PostCard
             key={post.id}

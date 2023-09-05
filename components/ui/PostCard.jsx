@@ -5,13 +5,14 @@ import React from 'react'
 export default function PostCard({ title, id, body }) {
    return (
       <Link href={`/posts/${id}`}>
-         <li>
-            <Image
-               src='/img.jpg'
-               width={400}
-               height={300}
-               className='h-52 object-cover'
-            />
+         <li className='w-full md:w-72 lg:w-96'>
+            <div className='relative w-full h-96 rounded-xl overflow-hidden'>
+               <Image
+                  fill
+                  src='/img.jpg'
+                  className='object-cover'
+               />
+            </div>
             <h2>{title}</h2>
          </li>
       </Link>
