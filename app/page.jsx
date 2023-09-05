@@ -25,16 +25,7 @@ export default async function Home() {
           href='/about'>אודות</Link>
       </div>
 
-      {/* <ul className="flex justify-center gap-6 flex-col md:flex-row flex-wrap">
-        {allPosts
-          .filter((p, i) => i < 3)
-          .map(post =>
-            <PostCard
-              key={post.id}
-              {...post}
-            />
-          )}
-      </ul> */}
+
 
       <SearchSection />
 

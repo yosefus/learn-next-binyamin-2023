@@ -8,6 +8,7 @@ export default function PostCard({ title, id, body }) {
          <li className='w-full md:w-72 lg:w-96'>
             <div className='relative w-full h-96 rounded-xl overflow-hidden'>
                <Image
+                  alt='shut app'
                   fill
                   src='/img.jpg'
                   className='object-cover'
