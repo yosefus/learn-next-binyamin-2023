@@ -1,4 +1,5 @@
 import PostCard from "@/components/ui/PostCard";
+import SearchBar from "@/components/ui/SearchBar";
 import Link from "next/link";
 
 
@@ -13,6 +14,7 @@ export default async function Home() {
 
   return (
     <>
+      {/* hero */}
       <div className="text-center py-10 flex flex-col gap-4">
         <h1 className="font-bold text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quibusdam deleniti expedita magni aperiam quisquam?</h1>
         <p className="text-gray-700">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, reprehenderit rem dolorum ducimus atque consequatur fugit ex debitis tempore sapiente culpa, a, itaque possimus sed?</p>
@@ -22,6 +24,19 @@ export default async function Home() {
       </div>
 
       <ul className="flex justify-center gap-6 flex-col md:flex-row flex-wrap">
+        {allPosts
+          .filter((p, i) => i < 10)
+          .map(post =>
+            <PostCard
+              key={post.id}
+              {...post}
+            />
+          )}
+      </ul>
+
+      {/* search */}
+      <SearchBar />
+      <ul className="flex justify-center gap-6 flex-col md:flex-row flex-wrap">
         {allPosts.map(post =>
           <PostCard
             key={post.id}
@@ -29,6 +44,7 @@ export default async function Home() {
           />
         )}
       </ul>
+
     </>
   )
 }

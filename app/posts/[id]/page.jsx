@@ -1,20 +1,18 @@
 const getPostById = async (id) => {
    const res = await fetch('https://jsonplaceholder.typicode.com/posts/' + id)
    const post = await res.json()
-   if (!post?.id) throw 'not found at all'
+   if (id === '88') throw new Error('not allow')
+   if (!post?.id) throw new Error('not found at all')
    return post
 }
-
 export const generateStaticParams = async () => {
    const result = await fetch('https://jsonplaceholder.typicode.com/posts')
    const posts = await result.json()
    return posts.map(post => ({ id: String(post.id) }))
 }
 
-
 export default async function Page({ params }) {
    const post = await getPostById(params.id)
-
    console.log(post);
 
    return (
